@@ -1,0 +1,10 @@
+body { font-family: Inter, Arial, sans-serif; margin:0; }
+.app-root{display:flex;flex-direction:column;height:100vh}
+.app-header{display:flex;align-items:center;gap:1rem;padding:0.5rem 1rem;background:#0b3d91;color:white}
+.app-main{display:flex;flex:1}
+.sidebar{width:240px;border-right:1px solid #eee;padding:1rem;overflow:auto}
+.jobs{width:300px;border-right:1px solid #eee;padding:1rem;overflow:auto}
+.gantt{flex:1;padding:1rem;overflow:auto}
+.inspect{width:320px;border-left:1px solid #eee;padding:1rem;overflow:auto}
+.task{position:absolute;padding:4px 6px;background:#3b82f6;color:white;border-radius:4px;cursor:grab}
+.task.dragging{opacity:0.6}

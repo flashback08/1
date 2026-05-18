@@ -1,0 +1,273 @@
+{
+  "users": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "username": "planner_alice",
+      "display_name": "Alice Chen",
+      "email": "alice@qc.local",
+      "role": "planner",
+      "password_hash": "hashed_pwd_1",
+      "totp_secret": null,
+      "created_at": "2026-05-01T08:00:00Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "username": "admin_bob",
+      "display_name": "Bob Smith",
+      "email": "bob@qc.local",
+      "role": "admin",
+      "password_hash": "hashed_pwd_2",
+      "totp_secret": null,
+      "created_at": "2026-05-01T08:00:00Z"
+    }
+  ],
+  "sections": [
+    {
+      "id": "10000000-0000-0000-0000-000000000001",
+      "name": "Microbiology"
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000002",
+      "name": "Chemistry"
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000003",
+      "name": "Physical Testing"
+    }
+  ],
+  "analysts": [
+    {
+      "id": "20000000-0000-0000-0000-000000000001",
+      "user_id": "00000000-0000-0000-0000-000000000001",
+      "section_id": "10000000-0000-0000-0000-000000000001",
+      "active": true
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000002",
+      "user_id": null,
+      "section_id": "10000000-0000-0000-0000-000000000002",
+      "active": true
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000003",
+      "user_id": null,
+      "section_id": "10000000-0000-0000-0000-000000000003",
+      "active": true
+    }
+  ],
+  "instruments": [
+    {
+      "id": "30000000-0000-0000-0000-000000000001",
+      "name": "HPLC-01",
+      "type": "HPLC",
+      "model": "Agilent 1260",
+      "status": "available",
+      "last_calibrated": "2026-04-01T10:00:00Z",
+      "next_calibration_due": "2026-07-01T10:00:00Z",
+      "protected_time": []
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000002",
+      "name": "HPLC-02",
+      "type": "HPLC",
+      "model": "Agilent 1260",
+      "status": "available",
+      "last_calibrated": "2026-04-05T10:00:00Z",
+      "next_calibration_due": "2026-07-05T10:00:00Z",
+      "protected_time": []
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000003",
+      "name": "GC-01",
+      "type": "GC",
+      "model": "Agilent 7890B",
+      "status": "available",
+      "last_calibrated": "2026-03-15T14:00:00Z",
+      "next_calibration_due": "2026-06-15T14:00:00Z",
+      "protected_time": []
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000004",
+      "name": "Micro-01",
+      "type": "Microbiology",
+      "model": "BioMérieux VITEK 2",
+      "status": "available",
+      "last_calibrated": "2026-04-10T09:00:00Z",
+      "next_calibration_due": "2026-10-10T09:00:00Z",
+      "protected_time": []
+    }
+  ],
+  "methods": [
+    {
+      "id": "40000000-0000-0000-0000-000000000001",
+      "code": "HPLC-001",
+      "name": "HPLC Assay for Active Ingredient",
+      "steps": [
+        {"step": 1, "name": "Sample Preparation", "duration_minutes": 30},
+        {"step": 2, "name": "Instrument Setup", "duration_minutes": 15},
+        {"step": 3, "name": "Run Analysis", "duration_minutes": 45, "wait_days": 0},
+        {"step": 4, "name": "Data Review", "duration_minutes": 20}
+      ],
+      "estimated_active_minutes": 110
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000002",
+      "code": "GC-001",
+      "name": "GC Analysis - Organic Impurities",
+      "steps": [
+        {"step": 1, "name": "Sample Prep", "duration_minutes": 20},
+        {"step": 2, "name": "Column Conditioning", "duration_minutes": 30},
+        {"step": 3, "name": "Run Analysis", "duration_minutes": 60, "wait_days": 0},
+        {"step": 4, "name": "Report Generation", "duration_minutes": 15}
+      ],
+      "estimated_active_minutes": 125
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000003",
+      "code": "MICRO-001",
+      "name": "Microbial Identification by VITEK",
+      "steps": [
+        {"step": 1, "name": "Sample Inoculation", "duration_minutes": 25},
+        {"step": 2, "name": "Incubation", "duration_minutes": 1440, "wait_days": 1},
+        {"step": 3, "name": "Result Interpretation", "duration_minutes": 30}
+      ],
+      "estimated_active_minutes": 55
+    }
+  ],
+  "analyst_qualifications": [
+    {
+      "id": "50000000-0000-0000-0000-000000000001",
+      "analyst_id": "20000000-0000-0000-0000-000000000001",
+      "method_id": "40000000-0000-0000-0000-000000000001",
+      "instrument_type": "HPLC"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000002",
+      "analyst_id": "20000000-0000-0000-0000-000000000001",
+      "method_id": "40000000-0000-0000-0000-000000000002",
+      "instrument_type": "GC"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000003",
+      "analyst_id": "20000000-0000-0000-0000-000000000002",
+      "method_id": "40000000-0000-0000-0000-000000000001",
+      "instrument_type": "HPLC"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000004",
+      "analyst_id": "20000000-0000-0000-0000-000000000003",
+      "method_id": "40000000-0000-0000-0000-000000000003",
+      "instrument_type": "Microbiology"
+    }
+  ],
+  "shifts": [
+    {
+      "id": "60000000-0000-0000-0000-000000000001",
+      "name": "Day Shift",
+      "start_time": "08:00:00",
+      "end_time": "16:00:00"
+    },
+    {
+      "id": "60000000-0000-0000-0000-000000000002",
+      "name": "Evening Shift",
+      "start_time": "16:00:00",
+      "end_time": "00:00:00"
+    },
+    {
+      "id": "60000000-0000-0000-0000-000000000003",
+      "name": "Night Shift",
+      "start_time": "00:00:00",
+      "end_time": "08:00:00"
+    }
+  ],
+  "analyst_shifts": [
+    {
+      "id": "70000000-0000-0000-0000-000000000001",
+      "analyst_id": "20000000-0000-0000-0000-000000000001",
+      "shift_id": "60000000-0000-0000-0000-000000000001",
+      "start_date": "2026-05-13",
+      "end_date": null
+    },
+    {
+      "id": "70000000-0000-0000-0000-000000000002",
+      "analyst_id": "20000000-0000-0000-0000-000000000002",
+      "shift_id": "60000000-0000-0000-0000-000000000001",
+      "start_date": "2026-05-13",
+      "end_date": null
+    },
+    {
+      "id": "70000000-0000-0000-0000-000000000003",
+      "analyst_id": "20000000-0000-0000-0000-000000000003",
+      "shift_id": "60000000-0000-0000-0000-000000000002",
+      "start_date": "2026-05-13",
+      "end_date": null
+    }
+  ],
+  "jobs": [
+    {
+      "id": "80000000-0000-0000-0000-000000000001",
+      "sample_id": "SAMPLE-2026-001",
+      "method_id": "40000000-0000-0000-0000-000000000001",
+      "material": "FG",
+      "quantity": 1,
+      "sla_date": "2026-05-15T16:00:00Z",
+      "supply_chain_priority": 8,
+      "ipqc_status": "pending",
+      "campaign_group_key": "CAMPAIGN-A-2026",
+      "created_at": "2026-05-13T08:30:00Z",
+      "requested_by": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "80000000-0000-0000-0000-000000000002",
+      "sample_id": "SAMPLE-2026-002",
+      "method_id": "40000000-0000-0000-0000-000000000001",
+      "material": "FG",
+      "quantity": 1,
+      "sla_date": "2026-05-15T16:00:00Z",
+      "supply_chain_priority": 8,
+      "ipqc_status": "pending",
+      "campaign_group_key": "CAMPAIGN-A-2026",
+      "created_at": "2026-05-13T09:00:00Z",
+      "requested_by": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "80000000-0000-0000-0000-000000000003",
+      "sample_id": "SAMPLE-2026-003",
+      "method_id": "40000000-0000-0000-0000-000000000002",
+      "material": "RM",
+      "quantity": 1,
+      "sla_date": "2026-05-14T12:00:00Z",
+      "supply_chain_priority": 6,
+      "ipqc_status": "pending",
+      "campaign_group_key": "CAMPAIGN-B-2026",
+      "created_at": "2026-05-13T09:15:00Z",
+      "requested_by": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "80000000-0000-0000-0000-000000000004",
+      "sample_id": "SAMPLE-2026-004",
+      "method_id": "40000000-0000-0000-0000-000000000003",
+      "material": "PM",
+      "quantity": 1,
+      "sla_date": "2026-05-16T10:00:00Z",
+      "supply_chain_priority": 5,
+      "ipqc_status": "pending",
+      "campaign_group_key": "CAMPAIGN-C-2026",
+      "created_at": "2026-05-13T10:00:00Z",
+      "requested_by": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "80000000-0000-0000-0000-000000000005",
+      "sample_id": "SAMPLE-2026-005",
+      "method_id": "40000000-0000-0000-0000-000000000001",
+      "material": "FG",
+      "quantity": 1,
+      "sla_date": "2026-05-17T14:00:00Z",
+      "supply_chain_priority": 9,
+      "ipqc_status": "pending",
+      "campaign_group_key": "CAMPAIGN-D-2026",
+      "created_at": "2026-05-13T10:30:00Z",
+      "requested_by": "00000000-0000-0000-0000-000000000001"
+    }
+  ]
+}
