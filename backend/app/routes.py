@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from typing import List
 import json
-from app.db import get_db
-from app.schemas import PlanRequest, ReplanRequest, UpdateTaskRequest, PlannerDayResponse
-from app.scheduler import schedule_daily_plan, replan_min_mod
-from db.models import User, Section, Analyst, Instrument, Method, AnalystQualification, Shift, AnalystShift, Job
+from backend.app.db import get_db
+from backend.app.schemas import PlanRequest, ReplanRequest, UpdateTaskRequest, PlannerDayResponse
+from backend.app.scheduler import schedule_daily_plan, replan_min_mod
+from database.models import User, Section, Analyst, Instrument, Method, AnalystQualification, Shift, AnalystShift, Job
 from sqlalchemy.orm import Session
 from uuid import UUID
 

@@ -4,7 +4,7 @@ import math
 import hashlib
 import json
 
-from db.models import Job, Method, Analyst, Instrument, AnalystQualification, ScheduledTask, BlockedSlot, Method as MethodModel, AuditLog
+from database.models import Job, Method, Analyst, Instrument, AnalystQualification, ScheduledTask, BlockedSlot, Method as MethodModel, AuditLog
 
 
 def _get_last_hash(session) -> str:
